@@ -1,0 +1,17 @@
+<% if flash[:message] %>
+    <%= flash[:message]%>
+<% end %>
+<% if current_user && current_user.admin %>
+    <p><b>ADMIN</b></p>
+<% end %>
+Name: <%= current_user.name%>
+<br>
+Tickets: <%= current_user.tickets %>
+<br>
+Current Mood: <%= current_user.mood %>
+<br>
+Height: <%= current_user.height %>
+<br><br>
+<%= link_to "See attractions", attractions_path %>
+<br><br>
+<%= button_to "Logout", logout_path %>
